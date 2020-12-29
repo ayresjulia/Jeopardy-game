@@ -69,7 +69,7 @@ function handleClick(e) {
 		setTimeout(function () {
 			$('#trebek').remove();
 			$('.row').append('<h1 id="title">Jeopardy!</h1>');
-			$('.row').append('<button id="btn">Start</button>');
+			$('.row').append('<button id="btn">Restart</button>');
 		}, 1800);
 	} else {
 		// already showing answer; ignore
