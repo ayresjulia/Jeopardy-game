@@ -5,7 +5,7 @@ let categories = [];
 /* Get numOfCategories random category from API.*/
 
 async function getCategoryIds() {
-	let response = await axios.get('http://jservice.io/api/categories/?count=60');
+	let response = await axios.get('https://jservice.io/api/categories/?count=60');
 	let catIds = response.data.map(c => c.id);
 	return _.sampleSize(catIds, numOfCategories);
 }
@@ -13,7 +13,7 @@ async function getCategoryIds() {
 /* Return object with data about a category: */
 
 async function getCategory(catId) {
-	const response = await axios.get(`http://jservice.io/api/category?id=${catId}`);
+	const response = await axios.get(`https://jservice.io/api/category?id=${catId}`);
 	let cat = response.data;
 	let allClues = cat.clues;
 	let randomClues = _.sampleSize(allClues, numCluesPerCat);
